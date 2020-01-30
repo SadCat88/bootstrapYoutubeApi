@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" )
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title 🟥Test Bootstrap4🟥
+    link(rel="shortcut icon" href="./favicon.ico")
+    link(rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css")
+    link(rel="stylesheet" href="./assets/css/base.css")
+    link(rel="stylesheet" href="./assets/css/main.css")
+    link(rel="stylesheet" href="./pages/index/index.css")
+
+  body
+    header.s-header.s_dark.main-header
+
+      nav.header-navigation.navbar.navbar-expand-lg.navbar-dark
+
+        a.header-navigation__logotype.navbar-brand(href='#')
+          img.header-navigation__logotype-img(src="./components/s-header/img/logotype.svg" alt="Логотип" )
+          span.header-navigation__logotype-text BlueRex
+
+        button.header-navigation__button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.header-navigation__button-icon.navbar-toggler-icon
+
+        .main-menu.collapse.navbar-collapse#navbarSupportedContent
+          ul.main-menu-list.navbar-nav.ml-auto
+            li.main-menu-list__item.nav-item
+              a.main-menu-list__item-link.nav-link(href='#')
+                | Home
+            li.main-menu-list__item.nav-item
+              a.main-menu-list__item-link.nav-link(href='#')
+                | About
+            li.main-menu-list__item.nav-item
+              a.main-menu-list__item-link.nav-link(href='#')
+                | Features
+            li.main-menu-list__item.nav-item
+              a.main-menu-list__item-link.nav-link(href='#')
+                | Product
+            li.main-menu-list__item.nav-item
+              a.main-menu-list__item-link.nav-link(href='#')
+                | Reviews
+            li.main-menu-list__item.nav-item
+              a.main-menu-list__item-link.nav-link(href='#')
+                | Faq
+            li.main-menu-list__item.nav-item
+              a.main-menu-list__item-link.nav-link(href='#')
+                | Contact
+
+      .header-promo
+        .header-promo-content
+          h1.promo-heading.
+            We	turn creative ideas into your business.
+          h2.promo-sub-heading.
+            We are best and creative agency
+          p.promo-description.
+            Lorem ipsum dolor sit am et, consec tetur adipi scing elit. Sed sodales enim ut rhoncus lorem ipsum ese terds.
+          .promo-buttons
+            a(href="#").promo-buttons__btn.button.button_main-color.btn.rounded-pill
+              | Our Story
+            a(href="#").promo-buttons__btn.button.button_second-color.btn.rounded-pill
+              | Read More
+        //- .header-promo__image
+
+    //- section.kek
+      p olololololol
+      .container
+        .row
+          .col 1 col
+          .col 2 col
+          .col 3 col
+          .col 4 col
+          .col 5 col
+          .col 6 col
+    //- =========================================================
+    script(src="./assets/bootstrap/js/jquery-3.4.1.slim.min.js")
+    script(src="./assets/bootstrap/js/popper.min.js")
+    script(src="./assets/bootstrap/js/bootstrap.min.js")

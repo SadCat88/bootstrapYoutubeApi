@@ -1,0 +1,73 @@
+// === для подключения переменных и расширений
+// =============================================================================
+
+// ↓ variables =================================================================
+// for example:
+// $mainColor   : #ff0000;
+// to use: color: $mainColor;
+
+// === colors
+$colorFontContentMain: #1d1d1d;
+$colorFontContentSecond: #ffffff;
+
+// $fontHeadingMainColor: #484848;
+// $fontHeadingSecondColor: #ffffff;
+
+$colorButtonMain:#f42267;
+$colorButtonSecond:#5f3fb8;
+
+$colorPanelMain: #631b49;
+
+
+
+// ↑ variables =================================================================
+
+// ↓ extends ===================================================================
+// to use: @extend .a11y;
+
+// === accessability
+// .a11y {
+//     outline: none;
+//     box-shadow:
+//         0 0 0 2px $mainColor,
+//         0 0 0 4px darken($mainColor, 10%);
+//     z-index: 20;
+
+// }
+
+// === ↓ fonts
+// 
+// === main font
+.main-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.6;
+    text-transform: none;
+
+}
+
+.main-heading-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    // font-size: 50px;
+    line-height: 1.05;
+    text-transform: none;
+
+}
+
+.second-heading-font {
+    font-family: 'Palatino Linotype', 'Book Antiqua', 'Palatino', serif;
+    font-weight: 400;
+    font-style: italic;
+    // font-size: 32px;
+    line-height: 1.4;
+    text-transform: none;
+
+}
+
+// === ↑ fonts
+
+// ↑ extends ===================================================================
