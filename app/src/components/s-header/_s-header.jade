@@ -1,0 +1,48 @@
+header.s-header.s_dark.main-header
+
+  nav.header-navigation.navbar.navbar-expand-lg.navbar-dark
+
+    a.header-navigation__logotype.navbar-brand(href='#')
+      img.header-navigation__logotype-img(src="./components/s-header/img/logotype.svg" alt="Логотип" )
+      span.header-navigation__logotype-text BlueRex
+
+    button.header-navigation__button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.header-navigation__button-icon.navbar-toggler-icon
+
+    .main-menu.collapse.navbar-collapse#navbarSupportedContent
+      ul.main-menu-list.navbar-nav.ml-auto
+        li.main-menu-list__item.nav-item
+          a.main-menu-list__item-link.nav-link(href='#')
+            | Home
+        li.main-menu-list__item.nav-item
+          a.main-menu-list__item-link.nav-link(href='#')
+            | About
+        li.main-menu-list__item.nav-item
+          a.main-menu-list__item-link.nav-link(href='#')
+            | Features
+        li.main-menu-list__item.nav-item
+          a.main-menu-list__item-link.nav-link(href='#')
+            | Product
+        li.main-menu-list__item.nav-item
+          a.main-menu-list__item-link.nav-link(href='#')
+            | Reviews
+        li.main-menu-list__item.nav-item
+          a.main-menu-list__item-link.nav-link(href='#')
+            | Faq
+        li.main-menu-list__item.nav-item
+          a.main-menu-list__item-link.nav-link(href='#')
+            | Contact
+
+  .header-promo
+    .header-promo-content
+      h1.promo-heading.
+        We	turn creative ideas into your business.
+      h2.promo-sub-heading.
+        We are best and creative agency
+      p.promo-description.
+        Lorem ipsum dolor sit am et, consec tetur adipi scing elit. Sed sodales enim ut rhoncus lorem ipsum ese terds.
+      .promo-buttons
+        a(href="#").promo-buttons__btn.button.button_main-color.button_rounded.btn.rounded-pill
+          | Our Story
+        a(href="#").promo-buttons__btn.button.button_second-color.button_rounded.btn.rounded-pill
+          | Read More

@@ -1,4 +1,5 @@
 // === пути к шрифтам (относительно файла base.scss)
+// потому что все правила @font-face подключены туда
 // =============================================================================
 
 @font-face {
@@ -16,3 +17,20 @@
     font-weight: 600;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'),
+        url('../../assets/fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+// @font-face {
+//     font-family: 'TM Vinograd';
+//     src: local('TM Vinograd'),
+//         url('../../assets/fonts/Tmvinogradregular.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+// }

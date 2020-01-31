@@ -1,0 +1,102 @@
+.s-watch {
+    min-height: 680px;
+    background: url('../../components/s-watch/img/map-bg.jpg') top center no-repeat, #ffffff;
+
+    .section-content {
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: -30px;
+            z-index: -10;
+            transform: translate(105%, 0);
+
+            width: 100%;
+            min-height: 609px;
+
+            background: url("../../components/s-watch/img/watch.png") center (center/cover) no-repeat;
+            background-size: contain;
+        }
+
+        // === tab-panel
+        .section-description {
+            .tab-panel {
+                margin-bottom: 20px;
+                margin-left: -10px;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: nowrap;
+
+            }
+
+            .tab-content {
+
+                .tab-content__description {
+                    font-size: 14px;
+                    font-weight: normal;
+                    line-height: 1.79;
+                    margin-bottom: 45px;
+                }
+            }
+
+            .button {
+                margin-left: 15px;
+            }
+        }
+
+        // === фон для текста
+        @media(max-width: 1199px) {
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: -30px;
+                transform: translate(-5%);
+
+                width: 120%;
+                min-height: 609px;
+                border-radius: 8px;
+
+                background-color: rgba(255, 255, 255, 0.8);
+                // box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.8);
+                border-radius: 8px;
+            }
+        }
+
+        // === сдвиг часов под текст
+        @media(max-width: 991px) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+
+            &::after {
+                width: 108%;
+            }
+
+            // === часы
+            &::before {
+                right: 50%;
+                transform: translate(50%, 0);
+            }
+        }
+
+        // === уменьшение фона для текста
+        @media(max-width: 500px) {
+
+            .tab-panel {
+                flex-wrap: wrap !important;
+
+                .tab-button {
+                    display: block;
+                    // clear: both;
+                    width: 100%;
+
+                    .tab-button__link {}
+                }
+            }
+        }
+    }
+}

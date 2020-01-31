@@ -82,18 +82,14 @@ gulp.task('dev-copy-files', function() {
 	// для переноса всех стандартных файлов из папки src в dev
 	return (
 		gulp
-			.src(
-				[
-					`./${path.root}/${path.src}/**/*.+(html|css|js|map)`,
-					// web files
-					`./${path.root}/${path.src}/**/*.+(jpeg|jpg|JPG|png|svg|gif|ico)`,
-					// images
-					`./${path.root}/${path.src}/**/*.+(eot|ttf|woff|woff2)`
-					// fonts
-				],
-				{ since: gulp.lastRun('dev-copy-files') }
-				// только измененные после последнего запуска
-			)
+			.src([
+				`./${path.root}/${path.src}/**/*.+(html|css|js|map)`,
+				// web files
+				`./${path.root}/${path.src}/**/*.+(jpeg|jpg|JPG|png|svg|gif|ico)`,
+				// images
+				`./${path.root}/${path.src}/**/*.+(eot|ttf|woff|woff2)`
+				// fonts
+			])
 			.pipe(newer(`./${path.root}/${path.dev}`))
 			// только те, которые уже не лежат в приемнике
 			.pipe(debug({ title: '= copy:' }))
@@ -459,18 +455,83 @@ gulp.task('prod-bootstrap-autoprefix-minify', function() {
 							// уровень оптимизации
 							1: {
 								// список первого уровня оптимизации
+								// === включить все опции из списка 1 уровня
 								all: true,
-								// использовать все опции из списка 1 уровня
+								// === перемещает @charset в начало файла
+								// cleanupCharsets: true,
+								// === приведение URL к общему виду
 								normalizeUrls: false
-								// кроме изменения URL
+								// optimizeBackground: true,
+								// optimizeBorderRadius: true,
+								// optimizeFilter: true,
+								// optimizeFont: true,
+								// optimizeFontWeight : true,
+								// optimizeOutline: true,
+								// === удаление пустых правил и вложенных блоков
+								// removeEmpty: true,
+								// === удаление отрицательных paddings
+								// removeNegativePaddings: true,
+								// === удаляет кавычки, когда они не нужны
+								// removeQuotes: true,
+								// === удаление ненужных пробелов
+								// removeWhitespace : true,
+								// === удаляет избыточные нули
+								// replaceMultipleZeros: true
+								// === укорачивает единицы времени
+								// replaceTimeUnits: true,
+								// === заменяет нулевые единицы измерения
+								// replaceZeroUnits: true,
+								// === округляет пиксели до десятичных знаков
+								// roundingPrecision : false,
+								// === метод сортировки селекторов
+								// 'natural'
+								// 'standard'
+								// 'none'
+								// false
+								// selectorsSortingMethod : 'standard',
+								// === число сохраняемых специальных комментариев, типа / *! ... * /
+								// specialComments: ' all '
+								// === оптимизация правил с собакой @
+								// tidyAtRules: true,
+								// === оптимизация областей действия @media
+								// tidyBlockScopes: true,
+								// === оптимизация селекторов
+								// tidySelectors: true,
+								// === функция для callback, нужна для отладки
+								// transform: function () {}
 							},
 							2: {
 								// список второго уровня минификации
+								// === включить все опции из списка 2 уровня
 								all: true,
+								// === слияние соседних правил
+								// mergeAdjacentRules: true,
+								// === слияние в короткие строки ???
+								// mergeIntoShorthands : true,
+								// === слияние @media
+								// mergeMedia: true,
+								// === слияние не соседних правил
+								mergeNonAdjacentRules: false,
+								// === семантическое слияние
+								// mergeSemantically : false ,
+								// === переопределяет свойства на основе понятности
+								// overrideProperties: true,
+								// === удаление пустых правил и вложенных блоков
+								// removeEmpty: true,
+								// === уменьшает сокращение несоседних правил
+								// reduNonAdjacentRules: true,
+								// === удаление дубликатов @font-face
+								// removeDuplicateFontRules: true,
+								// === удаление дубликатов @media
+								// removeDuplicateMediaBlocks: true,
+								// === удаление дубликатов правил
+								// removeDuplicateRules: true,
+								// === удаление неиспользуемых свойств
 								removeUnusedAtRules: false
-								// не удалять неиспользуемые свойства (иначе удаляет font.css)
-								//   restructureRules: true
-								// // произвести реструктуризацию
+								// === произвести реструктуризацию слияние одного и того же селектора из разных мест
+								// restructureRules: false
+								// определение свойств, которые не будут оптимизироваться
+								// skipProperties: []
 							}
 						}
 					},
@@ -639,6 +700,7 @@ gulp.task(
 	// 	callback();
 	// 	// завершение задачи
 	// });
+	//
 	// // === сортировка файлов на выходе
 	// // копирование файлов в разные приемники, в зависимости от выполнения условий
 	// gulp.task('example-copy-files', function(callback) {
@@ -655,6 +717,7 @@ gulp.task(
 	// 		})
 	// 	);
 	// });
+	//
 	// // === возможности внутри задачи
 	// gulp.task('example-listening-files', function() {
 	// 	return gulp
@@ -665,11 +728,13 @@ gulp.task(
 	// 		})
 	// 		.pipe(gulp.dest('./dest'));
 	// });
+	//
 	// // === удаление файлов без их чтения в память
 	// gulp.task('example-remove-files-without-read', function() {
 	// 	return .del(['./src/**'], { read: false })
 	// содержимое файлов не читается
 	// });
+	//
 	// // === вычисление имени файла и его пути
 	// //
 	// // когда поток Gulp обрабатывает какой-то файл, он создает объект file{}
@@ -702,6 +767,7 @@ gulp.task(
 	// 		})
 	// 		.pipe(gulp.dest('./dest'));
 	// });
+	//
 	// // === вывод в консоль действий между потоками
 	// gulp.task('example-debug', function() {
 	// 	return (
@@ -714,6 +780,7 @@ gulp.task(
 	// 			.pipe(gulp.dest('./dest'))
 	// 	);
 	// });
+	//
 	// // === параллельное и последовательное выполнение задач
 	// // задачи которые не возвращают завершение нельзя ставить в .series()
 	// gulp.task(
@@ -729,6 +796,7 @@ gulp.task(
 	// 		)
 	// 	)
 	// );
+	//
 	// // === применение потока только для измененных файлов.
 	// // из потока выпадают файлы, дата создания которых
 	// //  меньше даты последнего запуска задачи,
@@ -764,6 +832,7 @@ gulp.task(
 	// 			delete cached.caches.styles[path.resolve(filepath)];
 	// 		});
 	// });
+	//
 	// // === обработка ошибок в потоке
 	// gulp.task('example-pug-compile', function() {
 	// 	return (
@@ -794,6 +863,7 @@ gulp.task(
 	// 			.pipe(gulp.dest('app/public'))
 	// 	);
 	// });
+	//
 	// // === применение одного обработчика ошибок ко всем потокам
 	// gulp.task('example-scss-compile-and-autoprefix', function() {
 	// 	return gulp
@@ -814,6 +884,7 @@ gulp.task(
 	// 		.pipe(autoprefixer())
 	// 		.pipe(gulp.dest('app/public'));
 	// });
+	//
 	// // === запуск локального сервера
 	// // чтобы любая задача перезапускала браузер, необходимо добавить поток
 	// // .pipe(browserSync.stream());
@@ -835,6 +906,7 @@ gulp.task(
 	// 		}
 	// 	});
 	// });
+	//
 	// // === создание sourcemaps
 	// // все плагины между инициализацией и записью sourcemaps
 	// // должны иметь поддержку gulp-sourcemaps

@@ -30,24 +30,21 @@ h6 {
 }
 
 h1 {
-    @extend .main-heading-font;
+    @extend .font-heading-main;
 
 
 }
 
 h2 {
-    @extend .second-heading-font;
-
+    @extend .font-heading-second;
 }
 
 h3 {
-    @extend .main-heading-font;
-    font-size: 50px;
+    @extend .font-heading-main;
 }
 
 h4 {
-    @extend .second-heading-font;
-    font-size: 32px;
+    @extend .font-heading-second;
 }
 
 a {

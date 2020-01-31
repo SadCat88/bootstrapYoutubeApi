@@ -6,19 +6,23 @@
   line-height: 1.6;
   text-transform: none; }
 
-.main-heading-font, h1, h3 {
+.font-heading-main, h1, h3 {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+  font-weight: 800;
   font-style: normal;
-  line-height: 1.05;
   text-transform: none; }
 
-.second-heading-font, h2, h4 {
+.font-heading-second, h2, h4 {
   font-family: 'Palatino Linotype', 'Book Antiqua', 'Palatino', serif;
   font-weight: 400;
   font-style: italic;
-  line-height: 1.4;
   text-transform: none; }
+
+.font-content-main {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  font-weight: normal; }
 
 @font-face {
   font-family: 'Montserrat';
@@ -30,6 +34,12 @@
   font-family: 'Montserrat';
   src: local("Montserrat"), url("../../assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Montserrat';
+  src: local("Montserrat"), url("../../assets/fonts/Montserrat-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
   font-style: normal; }
 
 body {
@@ -51,12 +61,6 @@ h4,
 h5,
 h6 {
   margin: 0; }
-
-h3 {
-  font-size: 50px; }
-
-h4 {
-  font-size: 32px; }
 
 ul,
 li {

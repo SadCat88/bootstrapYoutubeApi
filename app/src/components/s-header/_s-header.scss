@@ -1,0 +1,352 @@
+.s-header {
+    &.main-header {
+        background:
+            url('../../components/s-header/img/header-bg.jpg') center (center/cover) no-repeat;
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .header-navigation {
+            width: 100%;
+            max-width: 1690px;
+            margin: 0 auto;
+            padding-top: 40px;
+
+            // === убрать отступ сверху для навигации в шапке
+            @media (max-height: 450px) {
+                padding-top: 5px;
+                height: 70px;
+            }
+
+            .header-navigation__logotype {
+                display: flex;
+                align-items: center;
+                color: $colorFontContentSecond;
+
+                .header-navigation__logotype-img {
+                    margin-right: 8px;
+                }
+
+                .header-navigation__logotype-text {
+                    font-size: 42px;
+                    line-height: 75px;
+                    font-weight: 600;
+                }
+
+                // === уменьшить логотип
+                @media(max-height: 450px) {
+                    .header-navigation__logotype-img {
+                        width: 50px;
+
+                        @media screen\0 {
+                            // конфликт с IE
+                            width: 70px;
+                        }
+                    }
+
+                    .header-navigation__logotype-text {
+                        font-size: 32px;
+                    }
+                }
+
+                // === уменьшение логотипа
+                @media(max-width: 400px) {
+                    .header-navigation__logotype-img {
+                        margin-top: 0;
+                        width: 17.5vw;
+                        // width: 35px;
+                    }
+
+                    .header-navigation__logotype-text {
+                        font-size: 10.5vw;
+                        // font-size: 21px;
+                    }
+                }
+            }
+
+            .header-navigation__button {
+                background-color: rgba(255, 255, 255, 0.15);
+            }
+
+            .main-menu {
+                font-size: 18px;
+                font-weight: 600;
+
+                .main-menu-list {
+                    padding-left: 20px;
+                    padding-right: 45px;
+
+                    .main-menu-list__item {
+                        &:not(:last-child) {
+                            margin-right: 20px;
+                        }
+
+                        // === активный элемент меню
+                        &.active {
+                            .main-menu-list__item-link {
+                                color: $colorFontContentSecond;
+                            }
+                        }
+
+                        // === обычный элемент меню
+                        .main-menu-list__item-link {
+                            color: transparentize($colorFontContentSecond, 0.3);
+
+                            &::after {
+                                content: "";
+
+                                display: block;
+                                widows: 100%;
+                                height: 1px;
+
+                                background-color: $colorFontContentSecond;
+                                transform: scale(0);
+                                transition: all 0.3s;
+                            }
+                        }
+
+                        // === наведение на элемент меню
+                        .main-menu-list__item-link:hover {
+                            color: $colorFontContentSecond;
+
+                            &::after {
+                                transform: scale(1);
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            // === меню из хедера в мобильном режиме
+            @media (max-width: 991px) {
+
+                .header-navigation__button {
+                    z-index: 5;
+                }
+
+                .main-menu {
+                    position: absolute;
+                    z-index: 4;
+                    top: 0;
+                    left: 0;
+
+                    width: 100%;
+
+                    .main-menu-list {
+                        height: 80vh;
+                        flex-grow: 2;
+
+                        padding: 0;
+                        padding-top: 15px;
+
+                        .main-menu-list__item {
+                            flex-shrink: 1;
+                            background-color: $colorPanelMain;
+                            width: 100vw;
+                            position: relative;
+                            left: 0;
+                            padding-left: 30px;
+                            box-shadow: 0 0 0 2px $colorPanelMain;
+
+                            &:first-child {
+                                box-shadow: 0 -15px 0 0px $colorPanelMain;
+                            }
+
+                            &:last-child {
+                                border-radius: 0 0 20px 20px;
+                            }
+
+                            .main-menu-list__item-link {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // =====================================================================
+        .header-promo {
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            max-width: 1600px;
+
+            margin: 0 auto;
+
+            .header-promo-content {
+                max-width: 740px;
+                position: relative;
+                margin: 0 25px;
+
+                display: flex;
+                flex-direction: column;
+
+                .promo-sub-heading {
+                    order: -1;
+                    margin-bottom: 10px;
+
+                    font-size: 42px;
+                }
+
+                .promo-heading {
+                    margin-bottom: 30px;
+
+                    font-size: 60px;
+                }
+
+                .promo-description {
+                    margin-bottom: 60px;
+
+                    font-size: 23px;
+                }
+
+                .promo-buttons {
+                    margin-left: 50px;
+                    display: flex;
+
+                    .promo-buttons__btn {
+                        width: 198px;
+                        height: 60px;
+                        margin: 0 10px;
+
+                        font-size: 17px;
+                        line-height: 48px;
+                        font-weight: 600;
+                    }
+
+                    // === уменьшение кнопок в promo
+                    @media(max-width: 440px) {
+                        .promo-buttons__btn {
+                            width: 100%;
+                        }
+                    }
+
+                }
+
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: url('../../components/s-header/img/header-bg__man.png') right bottom no-repeat;
+                background-size: contain;
+            }
+
+            // === скрывает человека в promo
+            @media(max-width: 1000px) {
+                &::before {
+                    display: none;
+                }
+            }
+
+            // === скрывает человека в promo для IE
+            @media screen\0 {
+                &::before {
+                    display: none;
+                }
+            }
+
+            // === фон для текста
+            @media(max-width: 1500px) {
+                .header-promo-content {
+                    z-index: 2;
+
+                    &::before {
+
+                        content: "";
+                        position: absolute;
+                        left: -20px;
+                        right: -10px;
+                        bottom: -15px;
+                        top: -15px;
+                        z-index: -1;
+
+                        background-color: rgba(0, 0, 0, 0.3);
+                        border-radius: 8px;
+                    }
+                }
+            }
+
+            // === уменьшение шрифта в promo
+            @media(max-width: 760px),
+            (max-height: 620px) {
+
+                .header-promo-content {
+                    margin-left: 10px;
+                    margin-right: 10px;
+
+                    .promo-sub-heading {
+                        font-size: 29px;
+                    }
+
+                    .promo-heading {
+                        margin-bottom: 15px;
+
+                        font-size: 44px;
+                    }
+
+
+                    .promo-description {
+                        margin-bottom: 20px;
+
+                        font-size: 16px
+                    }
+
+                    .promo-buttons {
+                        display: flex;
+                        margin: 0;
+
+                        .promo-buttons__btn {
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+
+            // === уменьшение шрифта в promo
+            @media(max-width: 500px),
+            (max-height: 400px) {
+                .header-promo-content {
+                    .promo-sub-heading {
+                        font-size: 22px;
+                    }
+
+                    .promo-heading {
+                        font-size: 32px;
+                    }
+
+                    .promo-description {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            // === сдвиг контента в promo для IE
+            @media screen\0 {
+                .header-promo-content {
+                    margin-top: 60px;
+                    width: 740px;
+
+                    @media(max-height: 700px) {
+                        margin-top: 0;
+
+                        .promo-description {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

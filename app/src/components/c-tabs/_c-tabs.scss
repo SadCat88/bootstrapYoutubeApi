@@ -1,0 +1,31 @@
+.tab-panel {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+
+    .tab-button {
+        width: 129px;
+        height: 46px;
+
+        &:hover {
+            box-shadow: 0 0 0 2 red;
+        }
+
+        .tab-button__link {
+
+            color: $colorFontContentMain;
+
+            &.active {
+                color: $colorFontContentSecond;
+                background-color: $colorButtonMain;
+                border: none;
+            }
+
+            &:hover {
+                box-shadow: 0 0 0 2 red;
+            }
+        }
+    }
+}

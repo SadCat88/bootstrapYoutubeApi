@@ -21,12 +21,12 @@
                     content: "";
                     position: absolute;
                     z-index: -1;
-                    background-color: white;
-                    background-color: rgba(254, 255, 173, 0.6);
                     top: 0;
                     bottom: 0;
                     left: 15px;
                     right: 15px;
+                    background-color: rgba(254, 255, 173, 0.6);
+                    box-shadow: 0 2px 0 -1px rgb(156, 49, 0);
                 }
             }
         }
