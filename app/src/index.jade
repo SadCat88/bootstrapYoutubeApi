@@ -7,17 +7,29 @@ html(lang="en")
     title 🟥Test Bootstrap4🟥
     link(rel="shortcut icon" href="./favicon.ico")
     link(rel="stylesheet" href="./assets/bootstrap/css/bootstrap.css")
+    link(rel="stylesheet" href="./assets/vendors/baguetteBox/css/baguetteBox.css")
     link(rel="stylesheet" href="./assets/css/base.css")
     link(rel="stylesheet" href="./assets/css/main.css")
     link(rel="stylesheet" href="./pages/index/index.css")
 
   body
 
+
+    .center-line-temporality
     include ./components/s-header/_s-header.jade
 
     include ./components/s-watch/_s-watch.jade
 
-    //- =========================================================
+    include ./components/s-progress/_s-progress.jade
+
+    include ./components/s-lets/_s-lets.jade
+
+    include ./components/s-design/_s-design.jade
+
+
     script(src="./assets/bootstrap/js/jquery-3.4.1.slim.min.js")
     script(src="./assets/bootstrap/js/popper.min.js")
     script(src="./assets/bootstrap/js/bootstrap.min.js")
+    script(src="./assets/vendors/baguetteBox/js/baguetteBox.min.js")
+    script(src="./components/c-youtube-video/_c-youtube-video.js")
+    script(src="./index.js" )

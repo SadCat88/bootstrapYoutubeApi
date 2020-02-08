@@ -29,6 +29,10 @@ const imageminPngquant = require('imagemin-pngquant');
 const browserSync = require('browser-sync').create();
 const JSDoc = require('gulp-jsdoc3');
 
+const iconfont = require('gulp-iconfont');
+const iconfontCSS = require('gulp-iconfont-css');
+const fontName = 'awesomeBluRex';
+
 const path = {
 	root: 'app',
 	// корневая папка
@@ -52,6 +56,9 @@ const path = {
 //
 // gulp jsdoc
 // создает документацию для js
+// 
+// iconfont
+// генерация иконочного шрифта
 
 // =============================================================================
 //
@@ -87,8 +94,10 @@ gulp.task('dev-copy-files', function() {
 				// web files
 				`./${path.root}/${path.src}/**/*.+(jpeg|jpg|JPG|png|svg|gif|ico)`,
 				// images
-				`./${path.root}/${path.src}/**/*.+(eot|ttf|woff|woff2)`
+				`./${path.root}/${path.src}/**/*.+(eot|ttf|woff|woff2)`,
 				// fonts
+				`!./${path.root}/${path.src}/assets/icons/**`
+				// icons
 			])
 			.pipe(newer(`./${path.root}/${path.dev}`))
 			// только те, которые уже не лежат в приемнике
@@ -150,7 +159,8 @@ gulp.task('dev-scss-compile', function() {
 			.src(
 				[
 					`./${path.root}/${path.src}/**/*.+(scss|sass)`,
-					`!./${path.root}/${path.src}/**/bootstrap/scss/**`
+					`!./${path.root}/${path.src}/**/bootstrap/scss/**`,
+					`!./${path.root}/${path.src}/**/vendors/**`,
 				],
 				{
 					since: gulp.lastRun('dev-scss-compile')
@@ -216,6 +226,40 @@ gulp.task('dev-bootstrap-scss-compile', function() {
 	);
 });
 
+// === компиляция vendor libs из SCSS для режима development
+// и создание sourcemaps к ним
+gulp.task('dev-vendors-scss-compile', function() {
+	return (
+		gulp
+			.src(
+				[
+					`./${path.root}/${path.src}/assets/vendors/source/**/*.scss`
+				],
+				{
+					since: gulp.lastRun('dev-vendors-scss-compile')
+				}
+			)
+			.pipe(
+				// обработчик ошибок
+				plumber({
+					errorHandler: notify.onError(function(err) {
+						return {
+							title: 'dev vendors SCSS compile',
+							message: err.message
+						};
+					})
+				})
+			)
+			.pipe(debug({ title: '+ compile:' }))
+			.pipe(remember('remember-dev-vendors-scss'))
+			.pipe(sourcemaps.init())
+			// отсюда следим за изменениями для создания sourcemaps
+			.pipe(sass())
+			.pipe(sourcemaps.write('./'))
+			.pipe(gulp.dest(`./${path.root}/${path.src}/assets/vendors`))
+	);
+});
+
 // =============================================================================
 //
 // === production tasks ========================================================
@@ -255,8 +299,10 @@ gulp.task('prod-copy-files', function() {
 			// web files
 			`./${path.root}/${path.src}/**/*.+(jpeg|jpg|JPG|png|svg|gif|ico)`,
 			// images
-			`./${path.root}/${path.src}/**/*.+(eot|ttf|woff|woff2)`
+			`./${path.root}/${path.src}/**/*.+(eot|ttf|woff|woff2)`,
 			// fonts
+			`!./${path.root}/${path.src}/assets/icons/**`
+			// icons
 		])
 		.pipe(debug({ title: '= copy:' }))
 		.pipe(gulp.dest(`./${path.root}/${path.prod}`));
@@ -606,6 +652,46 @@ gulp.task('jsdoc', function(cb) {
 	gulp
 		.src(['./README.md', `./${path.root}/${path.src}/**/*.js`], { read: false })
 		.pipe(JSDoc(cb));
+});
+
+// === icons font
+gulp.task('iconfont', function() {
+	return gulp
+		.src([`./${path.root}/${path.src}/assets/icons/*.svg`])
+		.pipe(debug({ title: '+ 1 part iconfont compile:', showFiles: true }))
+		.pipe(
+			// обработчик ошибок
+			plumber({
+				errorHandler: notify.onError(function(err) {
+					return {
+						title: 'iconfont error',
+						message: err.message
+					};
+				})
+			})
+		)
+		.pipe(debug({ title: '+ 2 part iconfont compile:', showFiles: true }))
+		.pipe(
+			iconfontCSS({
+				// генерация шаблонов scss и font-face
+				path: `./${path.root}/${path.src}/assets/icons/_icons_template.scss`,
+				// источник svg иконок
+				fontName: fontName,
+				// название шрифта
+				targetPath: `../css/utils/_iconfont.scss`,
+				// @font-face для нового шрифта
+				fontPath: `../../assets/fonts/`
+				// путь к шрифту для @font-face
+			})
+		)
+		.pipe(
+			iconfont({
+				fontName: fontName,
+				formats: ['ttf', 'eot', 'woff', 'woff2', 'svg']
+			})
+		)
+		.pipe(gulp.dest(`./${path.root}/${path.src}/assets/fonts/`));
+	// приемник для нового шрифта
 });
 
 // =============================================================================

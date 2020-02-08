@@ -1,0 +1,112 @@
+//- to use mixin:
+//- copy-paste this in root index.scss ↓
+//- ============================================================================
+//- 
+// @import './_c-youtube-video.scss';
+// // ↓ settings for mixin ========================================================
+// 
+// // === изображение на оверлее
+// $overlayBackgroundImage: url('./') center (center/cover) no-repeat;
+// 
+// // === оттенок для изображения на оверлее
+// $overlayBackgroundColor: rgb(100, 100, 180);
+// // === оттенок для изображения на оверлее при наведении
+// $overlayBackgroundColorHover: rgb(57, 57, 133);;
+// 
+// // === кнопка play
+// $playButtonBackground: url('../../components/c-youtube-video/img/button.svg') center center no-repeat;
+// // === кнопка play при наведении
+// $playButtonBackgroundHover: url('../../components/c-youtube-video/img/button_hover.svg') center center no-repeat;
+// 
+// // === стиль для названия видео
+// .youtube-video__name {
+//   color: red;
+//   font-size: 18px;
+//   font-weight: 800;
+// }
+// 
+// // ↑ settings for mixin ========================================================
+//- 
+//- ============================================================================
+
+
+
+// to add tis mixin
+// .youtube-video {
+//     @include youtube-video;
+// }
+
+@mixin youtube-video {
+
+  position: relative;
+  z-index: 1;
+
+  .youtube-video__overlay {
+    // === название видео
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    padding: 5% 7%;
+
+    @extend .youtube-video__name;
+
+    // === оверлей
+    &::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      background: $overlayBackgroundImage;
+      background-color: $overlayBackgroundColor;
+      background-blend-mode: multiply;
+    }
+
+    // === кнопка play
+    &::after {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 100%;
+      height: 100%;
+      background: $playButtonBackground;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      // === оверлей
+      &::before {
+        background-color: $overlayBackgroundColorHover;
+      }
+
+      // === кнопка play
+      &::after {
+        background: $playButtonBackgroundHover;
+      }
+    }
+
+    // скрытие фона и названия видео
+    &.youtube-video__overlay_hide-bg-and-text {
+      font-size: 0;
+
+      // === оверлей
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,67 +1,71 @@
 @import '../../assets/css/utils/_vars.scss';
+@import '../../assets/css/utils/_iconfont.scss';
 
 @import '../../components/s-header/_s-header.scss';
 @import '../../components/s-watch/_s-watch.scss';
+@import '../../components/s-progress/_s-progress.scss';
+@import '../../components/s-lets/_s-lets.scss';
+@import '../../components/s-design/_s-design.scss';
 
 @import '../../components/c-buttons/_c-buttons.scss';
 @import '../../components/c-tabs/_c-tabs.scss';
 
-
 // common section ==============================================================
 .s_dark {
-    color: $colorFontContentSecond;
+  color: $colorFontContentSecond;
 
-    text-shadow: 1px 1px 3px #000000,
-        1px 1px 6px #000000;
+  text-shadow: 1px 1px 3px #000000,
+    1px 1px 6px #000000;
 }
 
 .s_light {
-    color: $colorFontContentMain;
+  color: $colorFontContentMain;
+
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .section-content {
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+
+    .section-heading__second {
+      order: -1;
+      margin-bottom: 15px;
+
+      font-size: 33px;
+      line-height: 1.05;
+    }
+
+    .section-heading__main {
+      font-size: 48px;
+      line-height: 1.05;
+    }
+  }
+
+  .section-description {
+    font-size: 18px;
+  }
+
+  // === уменьшение размера заголовков
+  @media(max-width: 991px) {
     .section-heading {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 30px;
+      .section-heading__second {
+        font-size: 22px;
+      }
 
-
-        .section-heading__second {
-            order: -1;
-            margin-bottom: 15px;
-
-            font-size: 33px;
-            line-height: 1.05;
-        }
-
-        .section-heading__main {
-            font-size: 48px;
-            line-height: 1.05;
-        }
-
-        .section-description {
-            font-size: 14px;
-        }
-
+      .section-heading__main {
+        font-size: 32px;
+      }
     }
+  }
 
-    // === уменьшение размера заголовков
-    @media(max-width: 991px) {
-        .section-heading {
-            .section-heading__second {
-                font-size: 22px;
-            }
-
-            .section-heading__main {
-                font-size: 32px;
-            }
-        }
+  // == увеличение шрифта в планшетной версии
+  @media(max-width: 768px) {
+    .section-description {
+      font-size: 16px;
     }
-
-    // == увеличение шрифта в планшетной версии
-    @media(max-width: 768px) {
-        .section-description {
-            font-size: 16px;
-        }
-    }
+  }
 }

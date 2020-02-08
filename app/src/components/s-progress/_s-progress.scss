@@ -1,0 +1,61 @@
+.s-progress {
+    background-color: $colorSectionSecond;
+    padding: 0;
+
+    .progress-item-w {
+        &:nth-child(2n) {
+            background-color: darken($colorSectionSecond, 6);
+
+            // === цвет фона до краев экрана
+            @media(max-width: 991px) {
+                box-shadow:
+                    15vw 0 0 0 darken($colorSectionSecond, 6),
+                    -15vw 0 0 0 darken($colorSectionSecond, 6);
+            }
+        }
+    }
+
+    .progress-item {
+        max-width: 310px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 100px 0;
+
+        // === уменьшение отступов
+        @media(max-width: 991px) {
+            padding: 25px 0;
+        }
+
+        &::before {
+            @extend %icon-megaphone;
+            font-size: 75px;
+        }
+
+        .progress-item__count {
+            margin-top: 15px;
+            display: block;
+
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+
+        .progress-item__heading {
+            display: block;
+            margin-bottom: 30px;
+
+            font-size: 28px;
+            font-weight: normal;
+            line-height: normal;
+        }
+
+        .progress-item__description {
+            display: block;
+
+            font-size: 15px;
+            font-weight: normal;
+            line-height: 1.6;
+            color: transparentize($colorFontContentSecond, 0.4)
+        }
+    }
+}

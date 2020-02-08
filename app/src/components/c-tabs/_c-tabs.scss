@@ -9,10 +9,6 @@
         width: 129px;
         height: 46px;
 
-        &:hover {
-            box-shadow: 0 0 0 2 red;
-        }
-
         .tab-button__link {
 
             color: $colorFontContentMain;
@@ -24,7 +20,7 @@
             }
 
             &:hover {
-                box-shadow: 0 0 0 2 red;
+                box-shadow: 0 0 0 2px $colorButtonMain;
             }
         }
     }

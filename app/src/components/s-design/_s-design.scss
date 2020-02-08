@@ -1,0 +1,106 @@
+// ↓ settings for mixin ========================================================
+
+// === изображение на оверлее
+$overlayBackgroundImage: url('../../components/s-design/img/video-image.jpg') center (center/cover) no-repeat;
+
+// === оттенок для изображения на оверлее
+$overlayBackgroundColor: transparentize($colorSectionSecond, 0.6);
+// === оттенок для изображения на оверлее при наведении
+$overlayBackgroundColorHover: transparentize($colorSectionSecond, 0.65);
+
+// === кнопка play
+$playButtonBackground: url('../../components/c-youtube-video/img/button.svg') center center no-repeat;
+// === кнопка play при наведении
+$playButtonBackgroundHover: url('../../components/c-youtube-video/img/button_hover.svg') center center no-repeat;
+
+// === стиль для названия видео
+.youtube-video__name {
+  color: red;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+// ↑ settings for mixin ========================================================
+
+@import '../c-youtube-video/c-youtube-video.scss';
+
+.s-design {
+  background-color: #ffffff;
+
+
+  .section-content {
+    margin-bottom: 25px;
+  }
+
+  .design-card {
+    position: relative;
+
+    padding-top: 80px;
+
+    @media (max-width: 991px) {
+      margin-bottom: 80px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+
+      background-image: linear-gradient(to top, $colorButtonMain, $colorButtonSecond);
+      background-image: -o-linear-gradient(to top, $colorButtonMain, $colorButtonSecond);
+      background-image: -moz-linear-gradient(to top, $colorButtonMain, $colorButtonSecond);
+      background-image: -webkit-linear-gradient(to top, $colorButtonMain, $colorButtonSecond);
+
+      // === совместимость с IE10, отмена градиента
+      @media all and (-ms-high-contrast: none),
+      (-ms-high-contrast: active) {
+        color: $colorFontContentMain;
+        background: transparent;
+      }
+    }
+
+    &.design-card_chats::before {
+      @extend %icon-chats;
+      font-size: 95px;
+    }
+
+    &.design-card_megaphone::before {
+      @extend %icon-megaphone;
+      font-size: 75px;
+    }
+
+    .design-card__heading {
+      display: block;
+
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    .design-card__content {
+      display: block;
+      height: 75px;
+      overflow: hidden;
+      margin-bottom: 60px;
+
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.8;
+    }
+  }
+
+  .w-youtube-video {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .youtube-video {
+
+    border-radius: 10px;
+
+    @include youtube-video;
+  }
+}

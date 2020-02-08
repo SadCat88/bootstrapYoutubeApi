@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <style>
+      .btn-bg {
+        fill: #5f3fb8;
+      }
+
+      .btn-symbol {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <circle id="Shape" class="btn-bg" cx="48" cy="48" r="48"/>
+  <path id="Shape-2" data-name="Shape" class="btn-symbol" d="M35,66.746V30.312a2.258,2.258,0,0,1,3.468-1.963c1.382,0.793,28.994,16.811,31.351,18.181a2.267,2.267,0,0,1,0,3.947c-1.7,1-29.414,17.1-31.421,18.222A2.246,2.246,0,0,1,35,66.746Z"/>
+</svg>

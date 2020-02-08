@@ -1,3 +1,19 @@
+// === центральная линейка =====================================================
+.center-line-temporality {
+    position: fixed;
+    z-index: 2000;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+
+    width: 2px;
+    height: 600vw;
+    border-left: 1px dashed green;
+    border-right: 1px dashed red;
+
+    background: gray;
+}
+
 // === обводка сетки bootstrap =================================================
 .bootstrap-liner-temp {
     .container {
@@ -33,6 +49,7 @@
     }
 }
 
+// =============================================================================
 // обводка контейнера, всех секций и центральная ось симметрии
 // в случае если верстка без bootstrap
 

@@ -1,0 +1,41 @@
+include ../c-youtube-video/_c-youtube-video.jade
+
+section.s-design.s_light
+  .container
+    .row
+      .col-lg-6
+        .section-content
+          .section-heading
+            h1.section-heading__main.
+              We	turn creative ideas into your business.
+            h2.section-heading__second.
+              We are best and creative agency
+          .section-description.
+            Lorem ipsum dolor sit am et, consec tetur adipi scing elit. Sed sodales enim ut rhoncus lorem ipsum ese terds. Lorem ipsum dolor sit am et, consec tetur adipi scing elit. Sed sodales enim ut rhoncus lorem ipsum ese terds.
+
+        .row
+
+          .col-6
+            .design-card.design-card_chats
+              span.design-card__heading
+                | Graphic Design
+              span.design-card__content
+                | Lorem ipsum dolor sit am et, consec tetur adipi scing elit. Sed sodales enim ut rhoncus lorem ipsum ese terds.
+              a.button.button_square.button_main-color(href="#")
+                | Read more
+
+          .col-6
+            .design-card.design-card_megaphone
+              span.design-card__heading
+                | Graphic Design
+              span.design-card__content
+                | Lorem ipsum dolor sit am et, consec tetur adipi scing elit. Sed sodales enim ut rhoncus lorem ipsum ese terds.
+              a.button.button_square.button_main-color(href="#")
+                | Read more
+
+      .col-lg-6.w-youtube-video
+
+        +youtube-video( {
+          videoId	: "player_id1",
+          videoName	: "",
+          } )

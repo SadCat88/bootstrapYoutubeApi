@@ -1,0 +1,17 @@
+//- to use mixin:
+//- copy-paste this in index.pug ↓
+//- ============================================================================
+//- 
+//- +youtube-video( {
+//-   videoId	: "player_id1",
+//-   videoName	: "Название видео",
+//-   } )
+//- 
+//- ============================================================================
+
+
+mixin youtube-video(data)
+  .youtube-video.embed-responsive.embed-responsive-1by1
+    p.youtube-video__overlay
+      =`${data.videoName}`
+    div(id=`${data.videoId}`).embed-responsive-item

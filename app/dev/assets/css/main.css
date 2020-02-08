@@ -1,3 +1,15 @@
+.center-line-temporality {
+  position: fixed;
+  z-index: 2000;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 600vw;
+  border-left: 1px dashed green;
+  border-right: 1px dashed red;
+  background: gray; }
+
 .bootstrap-liner-temp .container {
   outline: 2px solid red;
   background-color: rgba(255, 202, 202, 0.2); }
