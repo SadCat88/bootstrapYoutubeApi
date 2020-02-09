@@ -1,0 +1,53 @@
+.baguetteBox-open {
+  figcaption {
+    font-size: 16px;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+.s-work {
+  background-color: $colorSectionThird;
+
+  .section-heading {
+    max-width: 938px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-description__content {
+    max-width: 938px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .section-description {
+
+    .tab-panel {
+
+      margin-bottom: 75px;
+    }
+
+    .tab-content {}
+  }
+
+  .gallery {
+    .gallery__item {
+      margin-bottom: 20px;
+
+      img {
+        border-radius: 10px;
+
+        &:hover {
+          box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+}

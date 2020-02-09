@@ -479,6 +479,34 @@
         .s-design .youtube-video .youtube-video__overlay.youtube-video__overlay_hide-bg-and-text::before {
           display: none; }
 
+.baguetteBox-open figcaption {
+  font-size: 16px; }
+
+.baguetteBox-open img {
+  border-radius: 10px; }
+
+.s-work {
+  background-color: #f1f1f1; }
+  .s-work .section-heading {
+    max-width: 938px;
+    margin-left: auto;
+    margin-right: auto; }
+  .s-work .section-description__content {
+    max-width: 938px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    font-size: 20px;
+    line-height: 1.6; }
+  .s-work .section-description .tab-panel {
+    margin-bottom: 75px; }
+  .s-work .gallery .gallery__item {
+    margin-bottom: 20px; }
+    .s-work .gallery .gallery__item img {
+      border-radius: 10px; }
+      .s-work .gallery .gallery__item img:hover {
+        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3); }
+
 .button {
   display: block;
   text-align: center;
