@@ -451,11 +451,11 @@ gulp.task('prod-bootstrap-scss-compile-uncss', function() {
     )
     .pipe(debug({ title: '+ bootstrap compile:' }))
     .pipe(sass())
-    .pipe(
-      uncss({
-        html: [`./${path.root}/${path.prod}/**/*.html`],
-      })
-    )
+    // .pipe(
+    //   uncss({
+    //     html: [`./${path.root}/${path.prod}/**/*.html`],
+    //   })
+    // )
     .pipe(gulp.dest(`./${path.root}/${path.prod}/assets/bootstrap/css`));
 });
 
