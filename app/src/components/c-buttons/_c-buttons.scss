@@ -31,6 +31,15 @@
         font-size: 15.5px;
         font-weight: 600;
         line-height: 46px;
-        box-shadow: 0px 10px 0 0 #ff5990;
+        
+
+        &.button_main-color {
+            background-color: $colorButtonMain;
+            box-shadow: 0px 10px 0 0 #ff5990;
+        }
+        &.button_second-color {
+            background-color: $colorButtonSecond;
+            box-shadow: 0px 10px 0 0 #a57ee9;
+        }
     }
 }

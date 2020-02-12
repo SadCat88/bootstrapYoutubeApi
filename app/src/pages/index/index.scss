@@ -7,9 +7,46 @@
 @import '../../components/s-lets/_s-lets.scss';
 @import '../../components/s-design/_s-design.scss';
 @import '../../components/s-work/_s-work.scss';
+@import '../../components/s-partners/_s-partners.scss';
+@import '../../components/s-happy-client/_s-happy-client.scss';
+@import '../../components/s-form/_s-form.scss';
+@import '../../components/s-social/_s-social.scss';
+@import '../../components/s-footer/_s-footer.scss';
+
 
 @import '../../components/c-buttons/_c-buttons.scss';
 @import '../../components/c-tabs/_c-tabs.scss';
+
+.jump-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  z-index: 200;
+
+  width: 50px;
+  height: 50px;
+
+  background-color: #682d7f;
+  border-radius: 8px;
+  opacity: 0.6;
+  box-shadow: 0 0 0 2px black;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .jump-to-top__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 30px;
+    height: 30px;
+  }
+}
+
 
 // common section ==============================================================
 .s_dark {

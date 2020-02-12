@@ -30,11 +30,20 @@
   .section-description {
 
     .tab-panel {
-
       margin-bottom: 75px;
     }
 
-    .tab-content {}
+    // уменьшение отступа под табами и растягивание табов на всю доступную длину
+    @media(max-width: 767px) {
+      .tab-panel {
+        margin-bottom: 20px;
+      }
+
+      .tab-button {
+        width: 100%;
+
+      }
+    }
   }
 
   .gallery {

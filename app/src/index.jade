@@ -13,9 +13,9 @@ html(lang="en")
     link(rel="stylesheet" href="./pages/index/index.css")
 
   body
+    .jump-to-top
+      img.jump-to-top__img(src="./components/c-jump-to-top/img/up-arrow.svg" alt="arrow to top")
 
-
-    .center-line-temporality
     include ./components/s-header/_s-header.jade
 
     include ./components/s-watch/_s-watch.jade
@@ -28,9 +28,18 @@ html(lang="en")
 
     include ./components/s-work/_s-work.jade
 
+    include ./components/s-partners/_s-partners.jade
+
+    include ./components/s-happy-client/_s-happy-client.jade
+
+    include ./components/s-form/_s-form.jade
+
+    include ./components/s-social/_s-social.jade
+
+    include ./components/s-footer/_s-footer.jade
 
 
-    script(src="./assets/bootstrap/js/jquery-3.4.1.slim.min.js")
+    script(src="./assets/bootstrap/js/jquery-3.4.1.min.js")
     script(src="./assets/bootstrap/js/popper.min.js")
     script(src="./assets/bootstrap/js/bootstrap.min.js")
     script(src="./assets/vendors/baguetteBox/js/baguetteBox.min.js")

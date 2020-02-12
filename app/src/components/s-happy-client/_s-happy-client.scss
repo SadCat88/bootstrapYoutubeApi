@@ -1,0 +1,105 @@
+.s-happy-client {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  background: url('../../components/s-happy-client/img/happy-client-bg.jpg') center (center/cover) no-repeat;
+
+  .happy-client-message {
+    margin: 100px 0;
+
+    .section-content {
+      margin-bottom: 70px;
+    }
+
+    .feedback {
+      margin-left: 50px;
+      max-width: 510px;
+
+      .feedback-item {
+        font-weight: 300;
+        line-height: normal;
+
+        .feedback-item__text {
+          position: relative;
+
+          margin-bottom: 70px;
+          font-size: 22px;
+          font-style: italic;
+
+          &::before {
+            content: "“";
+
+            position: absolute;
+            left: -65px;
+            top: -40px;
+
+            font-family: Montserrat;
+            font-size: 100px;
+            font-weight: 600;
+            line-height: 1;
+            color: $colorButtonMain;
+          }
+        }
+
+        .feedback-item__rating {
+          margin-bottom: 20px;
+          width: 128px;
+          height: 20px;
+
+          font-size: 26px;
+          color: $colorButtonMain;
+
+          &::before {
+            @extend %icon-star;
+            content: '\E900 \E900 \E900 \E900 \E900';
+          }
+        }
+
+        .feedback-item__client-name {
+          font-size: 24.5px;
+
+        }
+      }
+
+    }
+  }
+
+  .happy-client-photo {
+    margin-top: 40px;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+
+      width: 26%;
+      height: 60%;
+
+      border-radius: 50%;
+      box-shadow: 0 0 250px 100px white;
+    }
+
+    &::after {
+      content: "";
+
+      background: url('../../components/s-happy-client/img/happy-client.png') bottom no-repeat;
+      background-size: contain;
+
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    // === скрытие человека
+    @media(max-width:767px) {
+      display: none;
+    }
+  }
+
+}

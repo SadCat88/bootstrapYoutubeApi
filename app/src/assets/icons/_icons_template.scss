@@ -36,6 +36,13 @@ $icon_font_name:"<%= fontName %>";
 
 
 // =============================================================================
+// to use
+// .symbol-box {
+// 		&::before/after{
+// 			@extend %icon-nameIcon;
+// 		}
+// }
+// =============================================================================
 <% _.each(glyphs, function(glyph) { %>
 // @extend %icon-<%= glyph.fileName %>;
 %icon-<%= glyph.fileName %> {

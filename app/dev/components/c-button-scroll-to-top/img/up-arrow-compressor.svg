@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg id="arrow-btn" style="enable-background:new 0 0 490.7 490.7" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 490.7 490.7" version="1.1" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style type="text/css">
+	.st0{fill:url(#circle-path_1_);}
+	.st1{fill:url(#arrow-bg_1_);}
+	.st2{display:none;}
+</style>
+<linearGradient id="circle-path_1_" y2="490.67" gradientUnits="userSpaceOnUse" x2="245.33" x1="245.33">
+	<stop stop-color="#858585" offset="0"/>
+	<stop offset="1"/>
+</linearGradient>
+<path id="circle-path" d="m245.3 490.7c-135.5 0-245.3-109.9-245.3-245.4s109.8-245.3 245.3-245.3 245.3 109.8 245.3 245.3c-0.1 135.5-109.8 245.2-245.3 245.4zm0-469.4c-123.7 0-224 100.3-224 224s100.3 224 224 224 224-100.3 224-224c-0.1-123.6-100.3-223.8-224-224z" class="st0"/>
+<linearGradient id="arrow-bg_1_" y2="72.914" gradientUnits="userSpaceOnUse" x2="245.3" y1="426.67" x1="245.3">
+	<stop stop-color="#858585" offset="0"/>
+	<stop offset="1"/>
+</linearGradient>
+<path id="arrow-bg" d="m245.3 426.7c-29.5 0-53.3-23.9-53.3-53.3v-123.7l-19.2 19.2c-19.1 18.3-49.3 18.3-68.4 0-18.8-18.9-18.8-49.6 0.1-68.4l118.3-118.2c12.5-12.5 32.8-12.5 45.2 0l118.1 118.3c18.9 18.9 18.9 49.5 0 68.4-19.1 18.3-49.3 18.3-68.4 0l-19.2-19.2v123.6c0 29.3-23.8 53.2-53.2 53.3z" class="st1"/>
+<path id="arrow-path" d="m245.3 426.7c-29.5 0-53.3-23.9-53.3-53.3v-123.7l-19.2 19.2c-19.1 18.3-49.3 18.3-68.4 0-18.8-18.9-18.8-49.6 0.1-68.4l118.3-118.2c12.5-12.5 32.8-12.5 45.2 0l118.1 118.3c18.9 18.9 18.9 49.5 0 68.4-19.1 18.3-49.3 18.3-68.4 0l-19.2-19.2v123.6c0 29.3-23.8 53.2-53.2 53.3zm-42.6-213.4c1.4 0 2.8 0.3 4.1 0.8 4 1.6 6.6 5.5 6.6 9.9v149.3c0 17.7 14.3 32 32 32s32-14.3 32-32v-149.3c0-4.3 2.6-8.2 6.6-9.9s8.6-0.7 11.6 2.3l37.2 37.4c10.7 10.2 27.5 10.2 38.3 0 10.6-10.6 10.6-27.7 0-38.3l-118.2-118.2c-4.2-4.2-10.9-4.2-15.1 0l-118.3 118.2c-10.6 10.6-10.6 27.7 0 38.3 10.7 10.2 27.5 10.2 38.3 0l37.3-37.3c2-2.1 4.7-3.2 7.6-3.2z" class="st2"/>
+</svg>

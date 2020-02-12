@@ -1,0 +1,58 @@
+.s-social {
+  background-color: $colorSectionSecond;
+
+  // === уменьшение внутренних отступов секции, список столбиком,отступ между элементами списка
+  @media(max-width: 450px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .soc {
+      flex-direction: column;
+
+      .soc-item {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .soc {
+    display: flex;
+    justify-content: center;
+
+
+    .soc-item {
+      &:not(:last-child) {
+        border-right: 4px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .soc-item__link {
+        display: block;
+        padding: 0 40px;
+
+        font-size: 27px;
+        font-weight: normal;
+        color: $colorFontContentSecond;
+
+        // === уменьшение размера шрифта
+        @media(max-width: 767px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    // === уменьшение ширины списка
+    @media(max-width: 991px) {
+      justify-content: space-between;
+
+      .soc-item {
+        &:not(:last-child) {
+          border-right: none;
+        }
+
+        .soc-item__link {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

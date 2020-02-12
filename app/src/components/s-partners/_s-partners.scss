@@ -1,0 +1,46 @@
+.s-partners {
+  background-color: $colorSectionSecond;
+  padding-bottom: 40px;
+
+  .partner__logo {
+    display: block;
+    max-width: 165px;
+    height: 80px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    &.partner__logo_cisco {
+      background: url('../../components/s-partners/img/logo-cisco.png') center (center/contain) no-repeat;
+    }
+
+    &.partner__logo_adidas {
+      background: url('../../components/s-partners/img/logo-adidas.png') center (center/contain) no-repeat;
+    }
+
+    &.partner__logo_lenovo {
+      background: url('../../components/s-partners/img/logo-lenovo.png') center (center/contain) no-repeat;
+    }
+
+    &.partner__logo_disney {
+      background: url('../../components/s-partners/img/logo-disney.png') center (center/contain) no-repeat;
+    }
+
+    &.partner__logo_amazon {
+      background: url('../../components/s-partners/img/logo-amazon.png') center (center/contain) no-repeat;
+    }
+
+    &.partner__logo_puma {
+      background: url('../../components/s-partners/img/logo-puma.png') center (center/contain) no-repeat;
+    }
+
+    &.partner__logo_apple {
+      background: url('../../components/s-partners/img/logo-apple.png') center (center/contain) no-repeat;
+    }
+
+    &.partner__logo_mini {
+      background: url('../../components/s-partners/img/logo-mini.png') center (center/contain) no-repeat;
+    }
+  }
+}
